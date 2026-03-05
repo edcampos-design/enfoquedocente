@@ -1,0 +1,392 @@
+.root-fonts{
+  /* design tokens */
+}
+:root{
+  --green: #2A827B;
+  --green-10: #E2EDF8;
+  --muted: #6c757d;
+  --dark: #343437;
+  --bg: #f6f8f8;
+  --container: 1100px;
+  --heading-font: 'Roboto', 'Museo Sans', 'Helvetica Neue', Arial, sans-serif;
+  --body-font: 'Roboto', 'gobCL', 'Helvetica Neue', Arial, sans-serif;
+}
+*{box-sizing:border-box}
+body{font-family: var(--body-font); color:var(--dark); margin:0; background:var(--bg); font-size:16px; line-height:1.5}
+
+/* Headings: use Montserrat 900 and green color */
+h1, h2, h3, h4 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  color: #2A827B;
+  margin: 0 0 12px;
+}
+
+h1 { font-size: 22px; line-height: 1.2 }
+h2 { font-size: 18px; line-height: 1.25 }
+h3 { font-size: 16px; line-height: 1.3 }
+h4 { font-size: 14px; line-height: 1.35 }
+.container{max-width:var(--container); margin:0 auto; padding:0}
+.topbar{
+    position: -webkit-sticky; /* Soporte para Safari */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:0;padding-bottom:12px}
+.nav-left{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+.nav-left a{color:var(--dark);text-decoration:none;font-size:14px;padding:12px 4px}
+.nav-left a:hover{color:var(--green)}
+.brand{font-size:13px;font-weight:700;padding:0;margin:0;display:flex;align-items:flex-start}
+.brand img{display:block;width:114px;height:79px;margin:0;padding:0;object-fit:contain}
+.hero{background:var(--green-10);padding:0;border-bottom:6px solid var(--green);position:relative;min-height:330px}
+.hero-inner{display:flex;gap:24px;align-items:center;padding-top:12px}
+.hero-text{flex:1}
+.hero-text h1{font-family: 'Museo Sans', var(--heading-font); font-weight:900;margin:0 0 8px;font-size:16pt;color:#2A827B;letter-spacing:0}
+.hero-text #site-logo{max-height:76px;display:block;margin-bottom:8px}
+.lead{color:var(--muted);margin:0 0 18px}
+.btn-primary{display:inline-block;background:var(--green);color:#fff;padding:10px 16px;border-radius:4px;text-decoration:none}
+.btn-outline{display:inline-block;border:1px solid #ddd;padding:8px 12px;border-radius:4px;text-decoration:none;color:var(--green)}
+.hero-art img{max-width:360px;height:auto;display:block}
+
+
+section {
+    scroll-margin-top: 80px; /* Ajusta según el alto de tu menú superior */
+}
+
+html {
+    scroll-behavior: smooth; /* Para que el bajada sea fluida */
+}
+
+/* platform CTA band */
+.platform-cta{background:var(--green);color:#fff}
+.hero .platform-cta{position:absolute;left:0;right:0;bottom:0;padding:12px 0}
+.platform-cta .platform-cta-link{color:#fff;text-decoration:none;font-family:var(--heading-font);font-weight:600;display:block;text-align:center;font-size:20px}
+.platform-cta .platform-cta-link strong{font-weight:900}
+.intro{padding:36px 0}
+.intro-row{display:flex;gap:24px;align-items:flex-start}
+.intro-text{flex:1}
+/* Remove top margin for first paragraph so it aligns with adjacent image */
+.intro-text p:first-child{margin-top:0}
+.intro-media{width:360px}
+
+/* Proposal two-column layout (diagram to the right) */
+.proposal-row{display:flex;gap:24px;align-items:flex-start}
+.proposal-text{flex:1}
+/* Remove top margin for first paragraph in proposal so it aligns with adjacent diagram */
+.proposal-text p:first-child{margin-top:0}
+.proposal-media{width:360px;text-align:center}
+.proposal-media .diagram img{width:100%;display:block}
+.proposal-media .btn-outline{display:inline-block;margin:12px auto 0;padding:10px 14px;border-radius:6px;text-decoration:none;color:#222;background:#FFC107;border:none;cursor:pointer;min-width:120px;text-align:center}
+
+/* Platform two-column layout */
+.platform-row{display:flex;gap:24px;align-items:flex-start}
+.platform-text{flex:1}
+.platform-text p:first-child{margin-top:0}
+.platform-media{width:360px;text-align:center}
+.platform-media img{width:100%;display:block;border:1px solid #e9ecef;border-radius:6px}
+.platform-media .btn-accent{display:inline-flex;margin-top:12px}
+.video-thumb{ /* keep simple block layout so button sits below image */
+  position:static;
+  text-align:center;
+}
+.video-thumb img{width:100%;display:block}
+
+/* Pauta item: icon at left of the paragraph */
+.pauta-item{display:flex;align-items:flex-start;gap:12px;margin:12px 0}
+.pauta-icon{width:44px;height:45px;flex:0 0 44px;display:block;align-self:flex-start}
+/* Ensure paragraph and icon align at the top */
+.pauta-item p{margin:0}
+@media(max-width:600px){
+  .pauta-item{gap:10px}
+  .pauta-icon{width:40px;flex:0 0 40px}
+}
+
+/* Shared accent button used for video and diagram actions */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  /* El padding lateral (20px) crea el espacio a los lados del texto */
+  padding: 0 20px; 
+  background: #00495f;
+  color: #ffffff !important; /* Asegura el color blanco */
+  border: none;
+  border-radius: 6px;
+  /* Eliminamos min-width para que el ancho sea automático */
+  width: auto; 
+  font-size: 14px;
+  font-weight: 500; /* Un poco más de peso se ve mejor en botones */
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+  margin-top: 12px; /* Mantenemos el margen que tenía el de video */
+}
+
+.btn-accent:hover {
+  background: #003646; /* Un tono más oscuro al pasar el mouse */
+}
+
+/* modal styles */
+.fd-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;z-index:9999}
+.fd-modal{background:#fff;padding:18px;border-radius:8px;max-width:900px;width:90%;box-shadow:0 8px 24px rgba(0,0,0,0.2);position:relative}
+.fd-modal img{width:100%;height:auto;display:block;border-radius:6px}
+.fd-modal-close{position:absolute;right:10px;top:8px;background:transparent;border:none;font-size:20px;cursor:pointer}
+.content{padding:36px 0}
+.content article{margin-bottom:28px}
+.diagram img{width:360px;max-width:100%;display:block}
+.resources{background:#fff;padding:20px 0;border-top:1px solid #e9ecef}
+.site-footer{background:#222;color:#fff;padding:28px 0;margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.logo-box{background:#fff;color:#222;padding:8px;border-radius:4px;display:inline-block}
+.logo-box img{display:block;height:48px}
+.contact-list{display:flex;flex-direction:column;gap:6px}
+.contact-item{display:flex;align-items:center;gap:8px}
+.contact-item img{width:18px;height:18px;display:inline-block}
+.footer-right .social img{height:28px}
+
+@media(max-width:900px){
+  .hero-inner,.intro-row,.footer-inner{flex-direction:column}
+  .hero-art img{max-width:100%}
+  .intro-media{width:100%}
+  .container{padding:0 12px}
+  .hero-text h1{font-size:26px}
+  .platform-cta .platform-cta-link{font-size:16px}
+  .proposal-row{flex-direction:column}
+  .proposal-media{width:100%}
+}
+/* =========================================
+   FOOTER FINAL: ALINEACIÓN IZQUIERDA EN COLUMNA REDES
+   ========================================= */
+
+.footer-container {
+    background-color: var(--green) !important;
+    color: #ffffff !important;
+    font-family: var(--body-font) !important;
+    margin-top: 50px;
+    width: 100%;
+    padding: 60px 0 !important; 
+}
+
+.footer-flex {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    flex-wrap: wrap !important;
+    max-width: var(--container) !important;
+    margin: 0 auto !important;
+    padding: 0 !important; 
+}
+
+/* Columna 1 (Logo): Alineación izquierda total */
+.footer-column:first-child {
+    flex: 0 0 auto !important; 
+    min-width: 150px !important;
+    text-align: left !important;
+    padding: 0 !important;
+}
+
+.footer-column:first-child img {
+    width: 125px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 0 20px 0 !important; 
+}
+
+/* Columna 2 (Contacto) */
+.footer-column:nth-child(2) {
+    flex: 1 !important;
+    padding: 0 40px !important; 
+}
+
+/* Columna 3 (Redes): Columna a la derecha, pero contenido interno a la izquierda */
+.footer-column:last-child {
+    flex: 0 0 auto !important;
+    text-align: left !important; /* Texto "Síganos" alineado con los íconos */
+    min-width: 150px !important;
+    padding: 0 !important;
+}
+
+.footer-column h5 {
+    color: #ffffff !important;
+    font-family: var(--heading-font) !important;
+    font-weight: 700 !important;
+    font-size: 19px !important;
+    margin: 0 0 15px 0 !important; /* Un poco más de espacio bajo "Síganos" */
+    text-transform: none !important;
+}
+
+/* Contenedor de íconos alineado a la izquierda de su columna */
+.social-links-icons {
+    display: flex !important;
+    justify-content: flex-start !important; /* Alinea íconos al inicio de la columna */
+    gap: 15px !important;
+}
+
+/* Ajustes para los nuevos íconos circulares */
+.social-links-icons a {
+    color: #ffffff !important;
+    text-decoration: none;
+    font-size: 24px !important;
+    transition: opacity 0.2s;
+}
+
+/* Ajustes Móvil: Todo centrado para pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-flex {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 20px !important;
+    }
+    .footer-column:last-child {
+        text-align: center !important;
+    }
+    .social-links-icons {
+        justify-content: center !important;
+    }
+    .footer-column {
+        margin-bottom: 30px;
+    }
+}
+
+/* --- SISTEMA DE PESTAÑAS --- */
+.recursos-tabs-section {
+    padding: 0;
+    background-color: #f6f8f8;
+}
+
+.tabs-header {
+    display: flex;
+    border-bottom: 2px solid #e0e0e0;
+    gap: 5px;
+}
+
+.tab-btn {
+    padding: 12px 25px;
+    border: 1px solid transparent;
+    border-bottom: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: var(--body-font);
+    color: #666;
+    border-radius: 8px 8px 0 0;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #eee;
+}
+
+/* Pestaña Activa */
+.tab-btn.active {
+    background-color: #f8f9fa; /* Fondo gris claro como la imagen */
+    border-color: #e0e0e0;
+    color: var(--dark);
+    font-weight: 500;
+    position: relative;
+}
+
+/* Línea verde inferior de la pestaña activa */
+.tab-btn.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--green);
+}
+
+/* Contenedor de contenido */
+.tabs-content-container {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-top: none;
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+}
+
+.tab-content {
+    display: none; /* Oculto por defecto */
+}
+
+.tab-content.active {
+    display: block; /* Solo se muestra el activo */
+}
+
+/* Lista de recursos interna */
+.recursos-list {
+    list-style: none;
+    padding: 0;
+}
+
+.recursos-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--dark);
+}
+
+.recursos-list i {
+    color: #5c8d89; /* Color de los iconos en la imagen */
+    font-size: 18px;
+}
+
+
+.recurso-link {
+    display: inline-flex;  /* Alinea ícono y texto en la misma línea */
+    align-items: center;   /* Centra verticalmente el ícono con el texto */
+    text-decoration: none; /* Quitamos el subrayado por defecto */
+    color: #00495f;        /* Color de tu enlace */
+    gap: 12px;             /* ESTO crea el espacio entre ícono y texto */
+    margin-bottom: 10px;
+}
+
+/* Contenedor de la lista */
+.recursos-list {
+    list-style: none; /* Quita los puntos negros de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+.recursos-list li {
+    margin-bottom: 18px; /* Espacio entre cada fila */
+}
+
+/* El enlace que envuelve todo */
+.recurso-item {
+    display: inline-flex;  /* Alinea ícono y texto */
+    align-items: center;   /* Centra verticalmente */
+    text-decoration: none; /* Quita el subrayado global */
+    color: #333;           /* Color del texto (Roboto) */
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    gap: 12px;             /* ESTO crea el espacio entre ícono y texto sin subrayado */
+}
+
+/* Estilo de los íconos de FontAwesome */
+.recurso-item i {
+    color: #5c8d89;        /* El color verde de tu imagen original */
+    font-size: 20px;       /* Tamaño del ícono */
+    width: 24px;           /* Ancho fijo para que los textos queden alineados */
+    text-align: center;
+}
+
+/* Estilo del texto */
+.recurso-texto {
+    text-decoration: underline; /* Solo subrayamos el texto */
+    text-underline-offset: 4px; /* Separa un poco el subrayado para que se vea limpio */
+    color: #00495f;            /* Color azul/verde de link */
+}
+
+.recurso-item:hover .recurso-texto {
+    color: #002a36;            /* Oscurece al pasar el mouse */
+}
