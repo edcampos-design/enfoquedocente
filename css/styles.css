@@ -390,3 +390,23 @@ html {
 .recurso-item:hover .recurso-texto {
     color: #002a36;            /* Oscurece al pasar el mouse */
 }
+
+/* Contenedor para mantener la proporción 16:9 */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px; /* Opcional: para redondear las esquinas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Opcional: para darle profundidad */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
