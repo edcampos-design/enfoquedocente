@@ -17,6 +17,11 @@
 <body>
     <header class="topbar">
         <nav class="nav container">
+            <div class="brand"><img src="assets/logo_agencia.png" alt="Agencia de Calidad de la Educación" /></div>
+            <!-- botón para mostrar/ocultar el menú en móvil -->
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-left">
                 <li><a href="#interacciones">INTERACCIONES PEDAGÓGICAS</a></li>
                 <li><a href="#propuesta">PROPUESTA</a></li>
@@ -24,7 +29,6 @@
                 <li><a href="#pauta">PAUTA Y REPORTE</a></li>
                 <li><a href="#recursos">RECURSOS</a></li>
             </ul>
-            <div class="brand"><img src="assets/logo_agencia.png" alt="Agencia de Calidad de la Educación" /></div>
         </nav>
     </header>
 
@@ -173,17 +177,22 @@
             </article>
         </section>
 
-        <section id="recursos" class="recursos-tabs-section">
+        <section id="recursos" class="recursos-tabs-section">  
             <div class="container">
                 <h1>Recursos</h1>
-
                 <div class="tabs-header">
-                    <button class="tab-btn active" onclick="openTab(event, 'centrales')">Recursos centrales</button>
-                    <button class="tab-btn" onclick="openTab(event, 'complementarios')">Recursos
+                    <button class="tab-btn active" data-target="centrales" onclick="openTab(event, 'centrales')">Recursos centrales</button>
+                    <button class="tab-btn" data-target="complementarios" onclick="openTab(event, 'complementarios')">Recursos
                         complementarios</button>
-                    <button class="tab-btn" onclick="openTab(event, 'adicionales')">Recursos adicionales</button>
-                    <button class="tab-btn" onclick="openTab(event, 'bibliografia')">Bibliografía</button>
+                    <button class="tab-btn" data-target="adicionales" onclick="openTab(event, 'adicionales')">Recursos adicionales</button>
+                    <button class="tab-btn" data-target="bibliografia" onclick="openTab(event, 'bibliografia')">Bibliografía</button>
                 </div>
+                <select class="tabs-select" aria-label="Selecciona un recurso">
+                    <option value="centrales">Recursos centrales</option>
+                    <option value="complementarios">Recursos complementarios</option>
+                    <option value="adicionales">Recursos adicionales</option>
+                    <option value="bibliografia">Bibliografía</option>
+                </select>
 
                 <div class="tabs-content-container">
                     <div id="centrales" class="tab-content active">
